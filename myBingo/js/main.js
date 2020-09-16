@@ -1,5 +1,5 @@
 'use strict';
-// {
+// //{
 //   function createColumn(col) {
 //     const source = [];
 //     for (let i = 0; i < 15; i = (i +1) | 0)  source[i] = (i + 1) + (15 * col);
