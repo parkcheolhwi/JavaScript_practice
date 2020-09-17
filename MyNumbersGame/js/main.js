@@ -159,7 +159,10 @@
       if(answerNum === parseInt(this.li.textContent)){
         answerNum++;
 
-        if(answerNum === 4) clearTimeout(timeoutId);
+        if(answerNum === 4) {
+          clearTimeout(timeoutId);
+          startCheck = false;
+        }
         return true;
       }
       return false;
@@ -203,6 +206,7 @@
   let startTime;
   let timeoutId;
   let answerNum = 0;
+  let startCheck = false;
 
   function timeRunner(){
     const timer = document.getElementById("timer");
@@ -214,6 +218,9 @@
   }
 
   document.getElementById("btn").addEventListener("click", () => {
+    if (startCheck) return;
+
+    startCheck = true;
     board.activate();
 
     answerNum = 0;
