@@ -110,11 +110,11 @@
   let answerCnt = 0;
 
   const quizSet = shuffleArray([
-    {question : "Q1", answerList : ["a1", "b1", "c1"]},
-    {question : "Q2", answerList : ["a2", "b2", "c2"]},
-    {question : "Q3", answerList : ["a3", "b3", "c3"]},
-    {question : "Q4", answerList : ["a4", "b4", "c4"]},
-    {question : "Q5", answerList : ["a5", "b5", "c5"]}
+    {question : "日本の首都は？", answerList : ["東京", "大阪", "名古屋"]},
+    {question : "韓国の首都は？", answerList : ["ソウル", "釜山", "済州"]},
+    {question : "フランスの首都は？", answerList : ["パリ", "ニス", "マルセイユ"]},
+    {question : "ドイツの首都は？", answerList : ["ベルリン", "ロンダ", "北海道"]},
+    {question : "スペイン", answerList : ["マドリード", "バルセロナ", "セビリア"]}
   ]);
 
 
