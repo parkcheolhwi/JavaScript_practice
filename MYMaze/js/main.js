@@ -210,10 +210,12 @@
     }
   }
 
+  const a = prompt("サイズを選択してください。(n x n), nは5以上の奇数");
   const canvas = document.querySelector("canvas");
   if (typeof canvas.getContext === "undefined") return;
 
-  const maze = new Maze(21, 21, new MazeRender(canvas));
-  maze.render();
-
+  if(a != null){
+    const maze = new Maze(a, a, new MazeRender(canvas));
+    maze.render();
+  }
 })();
