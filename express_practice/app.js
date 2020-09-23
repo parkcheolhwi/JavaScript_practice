@@ -5,7 +5,7 @@ var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
 var csurf = require('csurf');
-var post = require("./routes/post");
+var user = require("./routes/user");
 
 
 app.set("views", __dirname+"/views");
@@ -29,13 +29,13 @@ app.use(function(req, res, next) {
 })
 
 //routing
-app.get("/", post.list);
-app.get("/createForm", post.createForm);
-app.post("/create", post.create);
-app.get("/detail/:id", post.detail);
-app.get("/updateForm/:id", post.updateForm);
-app.put("/update/:id", post.update);
-app.delete("/delete/:id", post.delete);
+app.get("/", user.list);
+app.get("/createForm", user.createForm);
+app.post("/create", user.create);
+app.get("/detail/:id", user.detail);
+app.get("/updateForm/:id", user.updateForm);
+app.put("/update/:id", user.update);
+app.delete("/delete/:id", user.delete);
 
 
 app.listen(3000);

@@ -1,13 +1,13 @@
+// DB
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
 const assert = require('assert');
 
-/* 接続先URL */
+// 接続先URL
 const url = 'mongodb://localhost:27017';
-/**
- * 追加オプション
- * MongoClient用オプション設定
- */
+
+// 追加オプション
+// MongoClient用オプション設定
 const connectOption = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -15,7 +15,7 @@ const connectOption = {
 
 
 
-
+// ユーザーリスト
 exports.list = (req, res) => {
 
   MongoClient.connect(url, connectOption, (err, client) => {
@@ -31,17 +31,17 @@ exports.list = (req, res) => {
       client.close();
     });
     
-
-    /* Errorがあれば処理を中断 */
     assert.equal(null, err);
   
   });
 };
 
+// 登録FORM
 exports.createForm = (req, res) => {
   res.render("createForm");
 };
 
+// ユーザー登録
 exports.create = (req, res) => {
   MongoClient.connect(url, connectOption, (err, client) => {
     if(err) throw err;
@@ -63,14 +63,12 @@ exports.create = (req, res) => {
       
       client.close();
     });
-    
-
-    /* Errorがあれば処理を中断 */
     assert.equal(null, err);
   
   });
 };
 
+// ユーザー詳細
 exports.detail = (req, res) => {
   MongoClient.connect(url, connectOption, (err, client) => {
     if(err) throw err;
@@ -85,12 +83,12 @@ exports.detail = (req, res) => {
       client.close();
     });
     
-    /* Errorがあれば処理を中断 */
     assert.equal(null, err);
   
   });
 };
 
+// ユーザー更新FORM
 exports.updateForm = (req, res) => {
   MongoClient.connect(url, connectOption, (err, client) => {
     if(err) throw err;
@@ -105,14 +103,13 @@ exports.updateForm = (req, res) => {
       client.close();
     });
     
-
-    /* Errorがあれば処理を中断 */
     assert.equal(null, err);
   
   });
   
 };
 
+// ユーザー更新
 exports.update = (req, res) => {
   MongoClient.connect(url, connectOption, (err, client) => {
     if(err) throw err;
@@ -136,13 +133,12 @@ exports.update = (req, res) => {
       client.close();
     });
     
-
-    /* Errorがあれば処理を中断 */
     assert.equal(null, err);
   
   });
 };
 
+// ユーザー削除
 exports.delete = (req, res) => {
   MongoClient.connect(url, connectOption, (err, client) => {
     if(err) throw err;
@@ -157,8 +153,6 @@ exports.delete = (req, res) => {
       client.close();
     });
     
-
-    /* Errorがあれば処理を中断 */
     assert.equal(null, err);
   
   });
