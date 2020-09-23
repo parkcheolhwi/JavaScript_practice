@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員</title>
+</head>
+<h1>会員Update</h1>
+<form method="post" action="/update/<%=result[0]._id%>?_method=put">
+  <input type="hidden" name="_id" value="<%=result[0]._id%>">
+  <input type="hidden" name="_csrf" value="<%=csrftoken%>">
+  名前 : <input type="text" name="name" value="<%=result[0].name%>"><br>
+  性別 : <input type="radio" name="gender" value="男">男
+         <input type="radio" name="gender" value="女">女<br>
+  電話番号 : <input type="text" name="tel" value="<%=result[0].tel%>"><br>
+  学年 : <input type="text" name="grade" value="<%=result[0].grade%>"><br>
+  点数 : <input type="text" name="score" value="<%=result[0].score%>"><br>
+  <button type="submit">修正</button>
+  <button type="button" onclick="history.back()">取消</button>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員</title>
+</head>
+<h1>会員登録</h1>
+<form method="post" action="/create">
+  <input type="hidden" name="_csrf" value="<%=csrftoken%>">
+  名前 : <input type="text" name="name"><br>
+  性別 : <input type="radio" name="gender" value="男">男
+         <input type="radio" name="gender" value="女">女<br>
+  電話番号 : <input type="text" name="tel"><br>
+  学年 : <input type="text" name="grade"><br>
+  点数 : <input type="text" name="score"><br>
+  <button type="submit">登録</button>
+  <button type="button" onclick="history.back()">取消</button>
+</form>
+</body>
+</html>

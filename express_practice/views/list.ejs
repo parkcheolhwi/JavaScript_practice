@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員</title>
+  <style>
+    table {
+      width: 500px;
+      text-align: center;
+    }
+    
+  </style>
+</head>
+<h1>会員リスト</h1>
+<p><a href="/createForm">登録</a></p>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>学年</th>
+        <th>点数</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody> 
+      <% results.forEach(result => { %>
+      <tr>
+        <td><a href="/detail/<%=result._id%>"><%= result.name%></a></td>
+        <td><%= result.grade%></td>
+        <td><%= result.score%></td>
+        <td><a href="/updateForm/<%=result._id%>">修正</a></td>
+        <td>
+          <form method="post" action="/delete/<%=result._id%>?_method=delete">
+            <input type="hidden" name="id" value="<%=result._id%>">
+            <input type="hidden" name="_csrf" value="<%=csrftoken%>">
+            <button type="submit">削除</button>
+          </form>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+ 
+  
+</body>
+</html>
